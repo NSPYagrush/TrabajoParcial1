@@ -6,35 +6,35 @@ entity data_path is
 	port(
 		Clock 		: in std_logic;
 		Reset 		: in std_logic;
-		IR_Load 		: in std_logic;
+		IR_Load 	: in std_logic;
 		MAR_Load 	: in std_logic;
-		PC_Load 		: in std_logic;
+		PC_Load 	: in std_logic;
 		PC_Inc 		: in std_logic;
 		A_Load 		: in std_logic;
 		B_Load 		: in std_logic;
 		CCR_Load 	: in std_logic;
 		Bus2_Sel 	: in std_logic_vector(1 downto 0);
 		Bus1_Sel 	: in std_logic_vector(1 downto 0);
-		ALU_Sel 		: in std_logic_vector(2 downto 0);
-		from_memory : in std_logic_vector(7 downto 0);	
-		IR 			: out std_logic_vector(7 downto 0);
-		CCR_Result  : out std_logic_vector(3 downto 0);
+		ALU_Sel 	: in std_logic_vector(2 downto 0);
+		from_memory 	: in std_logic_vector(7 downto 0);	
+		IR 		: out std_logic_vector(7 downto 0);
+		CCR_Result  	: out std_logic_vector(3 downto 0);
 		to_memory 	: out std_logic_vector(7 downto 0);
-		address 		: out std_logic_vector(7 downto 0));
+		address 	: out std_logic_vector(7 downto 0));
 end entity;
 
 architecture data_path_arch of data_path is
 	signal Bus1, Bus2, PC, A, B, ALU_Result, MAR : std_logic_vector (7 downto 0);
-	signal NZVC		: std_logic_vector (3 downto 0);
+	signal NZVC	: std_logic_vector (3 downto 0);
 	signal PC_uns 	: unsigned(7 downto 0);
 	
 --Componente ALU
 	component alu 
 		port(
-				B, Bus1 		: in std_logic_vector(7 downto 0);
-				ALU_Sel_in 		: in std_logic_vector(2 downto 0);
-				NZVC 			: out std_logic_vector(3 downto 0);
-				ALU_Result 	: out std_logic_vector(7 downto 0));
+			B, Bus1 	: in std_logic_vector(7 downto 0);
+			ALU_Sel_in	: in std_logic_vector(2 downto 0);
+			NZVC 		: out std_logic_vector(3 downto 0);
+			ALU_Result 	: out std_logic_vector(7 downto 0));
 	end component;
 begin
 
