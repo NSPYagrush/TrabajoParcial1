@@ -4,11 +4,11 @@ use IEEE.numeric_std.all;
 
 entity rw_96x8_sync is
     port (
-        clock		: in std_logic;
-		  write		: in std_logic;
-		  address	: in std_logic_vector (7 downto 0);
-		  data_in	: in std_logic_vector (7 downto 0);
-		  data_Out	: out std_logic_vector (7 downto 0));
+        	clock	 : in std_logic;
+		write	 : in std_logic;
+		address	 : in std_logic_vector (7 downto 0);
+		data_in	 : in std_logic_vector (7 downto 0);
+		data_Out : out std_logic_vector (7 downto 0));
 end entity;
 
 architecture rw_96x8_sync_arch of rw_96x8_sync is
