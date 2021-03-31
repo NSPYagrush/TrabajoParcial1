@@ -8,8 +8,8 @@ entity Mux_3to1 is
 			port_in_04, port_in_05, port_in_06, port_in_07,
 			port_in_08, port_in_09, port_in_10, port_in_11,
 			port_in_12, port_in_13, port_in_14, port_in_15	: in std_logic_vector(7 downto 0);
-			rom_data_out, rw_data_out, address 					: in std_logic_vector(7 downto 0);
-			data_out 													: out std_logic_vector(7 downto 0));
+			rom_data_out, rw_data_out, address 		: in std_logic_vector(7 downto 0);
+			data_out 					: out std_logic_vector(7 downto 0));
 end entity;
 
 architecture Mux_3to1_arch of Mux_3to1 is
